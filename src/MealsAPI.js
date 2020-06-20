@@ -109,7 +109,6 @@ class MealsAPI extends RESTDataSource {
         return this.normalize(meals, this.mealReducer)
     }
 
-    //TODO: List all meal categories via /categories.php. Note: requires schema adjustment
     // Get a list of all meal categories
     async getAllCategories () {
         const { meals } = await this.get(`/categories.php`)

@@ -1,17 +1,20 @@
 {
   "name": "mealdb-apollo-server",
-  "description": "An Apollo GraphQL Server for the REST Countries API",
+  "description": "An Apollo GraphQL Server for the TheMealDB's API",
   "keywords": [
     "apollo",
     "apollo-server",
     "rest",
-    "countries",
+    "thedatadb",
+    "themealdb",
+    "food",
     "api",
     "graphql",
     "gql"
   ],
   "version": "1.0.0",
   "author": "William Howell <wlm.howell@gmail.com>",
+  "repository": {"url": "https://github.com/willowell/Recipe-Box-Server"},
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
