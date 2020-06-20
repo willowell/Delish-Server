@@ -1,0 +1,6 @@
+{
+    "watch": ["src", "graphql"],
+    "ext": ".ts,.js",
+    "ignore": [],
+    "exec": "ts-node --require dotenv/config ./src/index.ts"
+}

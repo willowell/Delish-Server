@@ -25,11 +25,17 @@ export default class MealsAPI extends RESTDataSource {
       drinkAlternate: incoming.strDrinkAlternate,
       category: incoming.strCategory,
       area: incoming.strArea,
-      instructions: _.split(incoming.strInstructions, '\r\n'),
+      // Remove empty strings. Some of the instructions have line breaks built into the string,
+      // but I have chosen to remove them so the user of this server may format the instructions however they like.
+      instructions: _.filter(_.split(incoming.strInstructions, '\r\n'), (line) => !_.isEmpty(line)),
       thumbnail: incoming.strMealThumb,
       tags: nullifyEmpty(_.split(incoming.strTags, ',')),
       youtube: incoming.strYoutube,
-      ingredients: [
+      // Pair ingredients and their amounts from the API into objects,
+      // and remove any empty strings from the resulting array.
+      // Many of the meals do not use all 20 ingredients, so there's no reason
+      // why the resulting GraphQL query should have more ingredients than are actually in use.
+      ingredients: _.filter([
         { name: nullifyEmpty(incoming.strIngredient1), amount: nullifyEmpty(incoming.strMeasure1) },
         { name: nullifyEmpty(incoming.strIngredient2), amount: nullifyEmpty(incoming.strMeasure2) },
         { name: nullifyEmpty(incoming.strIngredient3), amount: nullifyEmpty(incoming.strMeasure3) },
@@ -50,7 +56,7 @@ export default class MealsAPI extends RESTDataSource {
         { name: nullifyEmpty(incoming.strIngredient18), amount: nullifyEmpty(incoming.strMeasure18) },
         { name: nullifyEmpty(incoming.strIngredient19), amount: nullifyEmpty(incoming.strMeasure19) },
         { name: nullifyEmpty(incoming.strIngredient20), amount: nullifyEmpty(incoming.strMeasure20) }
-      ],
+      ], ({ name }) => !_.isEmpty(name)),
       source: incoming.strSource,
       dateModified: incoming.dateModified
     }

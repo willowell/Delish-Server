@@ -50,6 +50,6 @@ const resolvers = {
             const data = ctx.dataSources.mealsAPI.getMealsByArea(args.area);
             return data;
         }
-    },
+    }
 };
 exports.default = resolvers;

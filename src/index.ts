@@ -5,12 +5,10 @@ import config from './config'
 import resolvers from './resolvers'
 import MealsAPI from './MealsAPI'
 
-require('dotenv').config()
-
 const typeDefs = readFileSync(path.join(__dirname, config.schemaPath)).toString()
 
-async function main () {
-  const dataSources = () => ({
+async function main (): Promise<void> {
+  const dataSources = (): any => ({
     mealsAPI: new MealsAPI()
   })
 

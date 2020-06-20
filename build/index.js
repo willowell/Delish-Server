@@ -6,11 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const apollo_server_1 = require("apollo-server");
 const fs_1 = require("fs");
 const path_1 = __importDefault(require("path"));
-require('dotenv').config();
 const config_1 = __importDefault(require("./config"));
-const typeDefs = fs_1.readFileSync(path_1.default.join(__dirname, config_1.default.schemaPath)).toString();
 const resolvers_1 = __importDefault(require("./resolvers"));
 const MealsAPI_1 = __importDefault(require("./MealsAPI"));
+const typeDefs = fs_1.readFileSync(path_1.default.join(__dirname, config_1.default.schemaPath)).toString();
 async function main() {
     const dataSources = () => ({
         mealsAPI: new MealsAPI_1.default()

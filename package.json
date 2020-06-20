@@ -14,12 +14,14 @@
   ],
   "version": "1.0.0",
   "author": "William Howell <wlm.howell@gmail.com>",
-  "repository": {"url": "https://github.com/willowell/Recipe-Box-Server"},
+  "repository": {
+    "url": "https://github.com/willowell/Recipe-Box-Server"
+  },
   "license": "MIT",
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./build && tsc",
-    "start": "yarn build && node build/index.js",
+    "start": "yarn build && node --require dotenv/config build/index.js",
     "start:dev": "NODE_ENV=development nodemon .",
     "lint": "npx eslint .",
     "plzfixmycode": "npx eslint . --fix",
@@ -29,6 +31,7 @@
     "@graphql-codegen/cli": "^1.15.3",
     "@graphql-codegen/typescript": "^1.15.3",
     "@graphql-codegen/typescript-resolvers": "^1.15.3",
+    "@types/dotenv": "^8.2.0",
     "@types/lodash": "^4.14.155",
     "@types/node": "^14.0.13",
     "@typescript-eslint/eslint-plugin": "^3.3.0",

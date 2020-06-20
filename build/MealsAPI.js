@@ -93,29 +93,29 @@ class MealsAPI extends apollo_datasource_rest_1.RESTDataSource {
     }
     // Get a single random meal
     async getRandomMeal() {
-        const { meals } = await this.get(`/random.php`);
+        const { meals } = await this.get('/random.php');
         return lodash_1.default.head(this.normalize(meals, this.mealReducer));
     }
     // Get a selection of 10 random meals
     //! LOCKED TO PATREON SUPPORTERS
     async getRandomMealSelection() {
-        const { meals } = await this.get(`/randomselection.php`);
+        const { meals } = await this.get('/randomselection.php');
         return this.normalize(meals, this.mealReducer);
     }
     // Get a list of all meal categories
     async getAllCategories() {
-        const { meals } = await this.get(`/categories.php`);
+        const { meals } = await this.get('/categories.php');
         return this.normalize(meals, this.categoryReducer);
     }
     // Get a list of all meal ingredients
     async getAllIngredients() {
-        const { meals } = await this.get(`/list.php?i=list`);
+        const { meals } = await this.get('/list.php?i=list');
         return this.normalize(meals, this.ingredientReducer);
     }
     // Get the latest meals
     //! LOCKED TO PATREON SUPPORTERS
     async getLatestMeals() {
-        const { meals } = await this.get(`/latest.php`);
+        const { meals } = await this.get('/latest.php');
         return this.normalize(meals, this.mealReducer);
     }
     // Search for some meals by main ingredient
