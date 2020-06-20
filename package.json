@@ -22,7 +22,8 @@
     "start": "yarn build && node build/index.js",
     "start:dev": "NODE_ENV=development nodemon .",
     "lint": "npx eslint .",
-    "plzfixmycode": "npx eslint . --fix"
+    "plzfixmycode": "npx eslint . --fix",
+    "gen": "yarn graphql-codegen"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.15.3",
