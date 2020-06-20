@@ -1,0 +1,75 @@
+type Query {
+    mealByName(name: String!): Meal
+    mealsByFirstLetter(letter: String!): [Meal]
+    mealByID(id: ID!): Meal
+    randomMeal: Meal
+    randomMealSelection: [Meal]
+    allCategories: [Category]
+    allIngredients: [Ingredient]
+    latestMeals: [Meal]
+    mealsByMainIngredient(mainIngredient: String!): [Meal]
+    mealsByIngredients(ingredients: [String!]): [Meal]
+    mealsByCategory(category: String!): [Meal]
+    mealsByArea(area: String!): [Meal]
+}
+
+type Meal {
+    id: ID!
+    name: String
+    drinkAlternate: String
+    category: String
+    area: String
+    instructions: [String]
+    thumbnail: String # URL
+    tags: [String]
+    youtube: String # URL
+    ingredients: [MeasuredIngredient] # pairs of ingredients
+    source: String
+    dateModified: String
+}
+
+type Category {
+    id: ID!
+    name: String!
+    thumbnail: String # URL
+    description: String
+}
+
+type Ingredient {
+    id: ID!
+    name: String!
+    description: String
+    type: String
+}
+
+type MeasuredIngredient {
+    name: String
+    amount: String
+}
+
+enum Area {
+    AMERICAN
+    BRITISH
+    CANADIAN
+    CHINESE
+    DUTCH
+    EGYPTIAN
+    FRENCH
+    GREEK
+    INDIAN
+    IRISH
+    ITALIAN
+    JAMAICAN
+    JAPANESE
+    KENYAN
+    MALAYSIAN
+    MEXICAN
+    MOROCCAN
+    RUSSIAN
+    SPANISH
+    THAI
+    TUNISIAN
+    TURKISH
+    UNKNOWN
+    VIETNAMESE
+}

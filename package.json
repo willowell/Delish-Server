@@ -1,0 +1,30 @@
+{
+  "name": "mealdb-apollo-server",
+  "description": "An Apollo GraphQL Server for the REST Countries API",
+  "keywords": [
+    "apollo",
+    "apollo-server",
+    "rest",
+    "countries",
+    "api",
+    "graphql",
+    "gql"
+  ],
+  "version": "1.0.0",
+  "author": "William Howell <wlm.howell@gmail.com>",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "start:dev": "NODE_ENV=development nodemon ."
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.9.2",
+    "apollo-server": "^2.15.0",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.1.0",
+    "lodash": "^4.17.15"
+  }
+}
