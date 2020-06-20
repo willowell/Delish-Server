@@ -500,7 +500,7 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@graphql-codegen/cli@^1.15.3":
+"@graphql-codegen/cli@^1.15.4":
   version "1.15.4"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-1.15.4.tgz#ec744e8fc41e892ccf8073d76f054312627ce64d"
   integrity sha512-b1friEdlnhRj6iGkQikuAgtTtBODINK4RWfaLCjExK4lPdJr3gKUQIq8Eg46ZDcbTyjsnQZC5KL3GE8HEABVjw==
@@ -575,7 +575,7 @@
     tslib "~2.0.0"
     upper-case "2.0.1"
 
-"@graphql-codegen/typescript-resolvers@^1.15.3":
+"@graphql-codegen/typescript-resolvers@^1.15.4":
   version "1.15.4"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-resolvers/-/typescript-resolvers-1.15.4.tgz#f97a43385aed3460c408b198d6004f6e3c8b060a"
   integrity sha512-I36jmNLVDPeb2DJwYTq1cL/EhUrhZT02mihZEwgjbvntAnbkY1Ed+sKGNmpLvfJVvEiKZd1m7CNWbatDr0PBSw==
@@ -587,7 +587,7 @@
     auto-bind "~4.0.0"
     tslib "~2.0.0"
 
-"@graphql-codegen/typescript@1.15.4", "@graphql-codegen/typescript@^1.15.3":
+"@graphql-codegen/typescript@1.15.4", "@graphql-codegen/typescript@^1.15.4":
   version "1.15.4"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-1.15.4.tgz#0240b97a0f2d482927aa47af90b3b76276ada8fd"
   integrity sha512-oqFh/FtPF47ZsAb84X5s6oQwXM28hoBIDGnvlTJwXlD7HK9+BaiqGy9a92OzTy3pa701jmR5gOH2E5PWSckysA==
@@ -2730,7 +2730,7 @@ eslint-visitor-keys@^1.1.0, eslint-visitor-keys@^1.2.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.3.0.tgz#30ebd1ef7c2fdff01c3a4f151044af25fab0523e"
   integrity sha512-6J72N8UNa462wa/KFODt/PJ3IU60SDpC3QXC1Hjc1BXXpfL2C9R5+AU7jhe0F6GREqVMh4Juu+NY7xn+6dipUQ==
 
-eslint@^7.2.0:
+eslint@^7.3.0:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.3.0.tgz#f9f1fc3dc1227985d0db88769f2bbac7b4b875d7"
   integrity sha512-dJMVXwfU5PT1cj2Nv2VPPrKahKTGdX+5Dh0Q3YuKt+Y2UhdL2YbzsVaBMyG9HC0tBismlv/r1+eZqs6SMIV38Q==

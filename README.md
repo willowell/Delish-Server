@@ -17,8 +17,8 @@ While I intend for this Apollo server to be a backend for my web app, I have mad
 * There are `get` methods in the `MealsAPI` class and corresponding resolvers for *almost* every endpoint TheMealDB has, including the Patreon-only endpoints. All you need to do is add your API key to a `.env` file in the root directory. 
 ----
 #### Environment Details
-* NodeJS version: 13.11.0
-* npm version: 6.13.7
+* NodeJS version: 14.4.0
+* npm version: 6.14.5
 ----
 #### Build Instructions
 To build and run this server on your machine:
