@@ -39,7 +39,7 @@ export type QueryMealsByFirstLetterArgs = {
 
 
 export type QueryMealByIdArgs = {
-  id: Scalars['ID'];
+  id: Scalars['Int'];
 };
 
 
@@ -64,7 +64,7 @@ export type QueryMealsByAreaArgs = {
 
 export type Meal = {
   __typename?: 'Meal';
-  id: Scalars['ID'];
+  id: Scalars['Int'];
   name: Maybe<Scalars['String']>;
   drinkAlternate: Maybe<Scalars['String']>;
   category: Maybe<Scalars['String']>;
@@ -80,7 +80,7 @@ export type Meal = {
 
 export type Category = {
   __typename?: 'Category';
-  id: Scalars['ID'];
+  id: Scalars['Int'];
   name: Scalars['String'];
   thumbnail: Maybe<Scalars['String']>;
   description: Maybe<Scalars['String']>;
@@ -88,10 +88,10 @@ export type Category = {
 
 export type Ingredient = {
   __typename?: 'Ingredient';
-  id: Scalars['ID'];
+  id: Scalars['Int'];
   name: Scalars['String'];
   description: Maybe<Scalars['String']>;
-  type: Maybe<Scalars['String']>;
+  kind: Maybe<Scalars['String']>;
 };
 
 export type MeasuredIngredient = {
@@ -207,7 +207,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = {
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']>;
-  ID: ResolverTypeWrapper<Scalars['ID']>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
   Meal: ResolverTypeWrapper<Meal>;
   Category: ResolverTypeWrapper<Category>;
   Ingredient: ResolverTypeWrapper<Ingredient>;
@@ -220,7 +220,7 @@ export type ResolversTypes = {
 export type ResolversParentTypes = {
   Query: {};
   String: Scalars['String'];
-  ID: Scalars['ID'];
+  Int: Scalars['Int'];
   Meal: Meal;
   Category: Category;
   Ingredient: Ingredient;
@@ -244,7 +244,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 };
 
 export type MealResolvers<ContextType = any, ParentType extends ResolversParentTypes['Meal'] = ResolversParentTypes['Meal']> = {
-  id: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  id: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   drinkAlternate: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   category: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -260,7 +260,7 @@ export type MealResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type CategoryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Category'] = ResolversParentTypes['Category']> = {
-  id: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  id: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   thumbnail: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   description: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -268,10 +268,10 @@ export type CategoryResolvers<ContextType = any, ParentType extends ResolversPar
 };
 
 export type IngredientResolvers<ContextType = any, ParentType extends ResolversParentTypes['Ingredient'] = ResolversParentTypes['Ingredient']> = {
-  id: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  id: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   name: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   description: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  type: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  kind: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
 };
 

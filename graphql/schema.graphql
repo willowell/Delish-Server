@@ -1,7 +1,7 @@
 type Query {
     mealByName(name: String!): Meal
     mealsByFirstLetter(letter: String!): [Meal]
-    mealByID(id: ID!): Meal
+    mealByID(id: Int!): Meal
     randomMeal: Meal
     randomMealSelection: [Meal]
     allCategories: [Category]
@@ -14,7 +14,7 @@ type Query {
 }
 
 type Meal {
-    id: ID!
+    id: Int!
     name: String
     drinkAlternate: String
     category: String
@@ -29,17 +29,17 @@ type Meal {
 }
 
 type Category {
-    id: ID!
+    id: Int!
     name: String!
     thumbnail: String # URL
     description: String
 }
 
 type Ingredient {
-    id: ID!
+    id: Int!
     name: String!
     description: String
-    type: String
+    kind: String
 }
 
 type MeasuredIngredient {
