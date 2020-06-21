@@ -20,13 +20,15 @@ While I intend for this Apollo server to be a backend for my web app, I have mad
 #### Environment Details
 * NodeJS version: 14.4.0
 * npm version: 6.14.5
+* yarn version: 1.22.4
 ----
 #### Build Instructions
 To build and run this server on your machine:
 1. Clone or download this repository.
 2. `cd` into the directory and run `yarn`.
-3. Run `yarn start` to start the server.
-4. If all went well, the server will be ready at http://localhost:4000/.
-5. Enjoy!!
+3. Rename `env.example` to `.env` and either add your private key or use the public test key. 
+4. Run `yarn start` to start the server.
+5. If all went well, the server will be ready at http://localhost:4000/.
+6. Enjoy!!
 
 If you have any problems, questions, suggestions, or critiques, please open an issue on this repository!
