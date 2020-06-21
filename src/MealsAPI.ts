@@ -1,6 +1,6 @@
 import { RESTDataSource } from 'apollo-datasource-rest'
 import _ from 'lodash'
-import { Meal, Category, Ingredient, MeasuredIngredient, Area, Maybe } from './gen/graphql-types'
+import { Meal, Category, Ingredient, Area, Maybe } from './gen/graphql-types'
 
 /**
  * The data from The MealDB is in the form:
@@ -13,7 +13,7 @@ import { Meal, Category, Ingredient, MeasuredIngredient, Area, Maybe } from './g
 export default class MealsAPI extends RESTDataSource {
   constructor () {
     super()
-    this.baseURL = `https://www.themealdb.com/api/json/v1/${process.env.API_KEY}`
+    this.baseURL = `https://www.themealdb.com/api/json/v1/${process.env.API_KEY ?? '1'}`
   }
 
   // Converts the JSON data from The MealDB into the form the GraphQL schema expects

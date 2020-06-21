@@ -14,7 +14,8 @@ While I intend for this Apollo server to be a backend for my web app, I have mad
 * Schema and example queries live in separate `.graphql` files in the graphql folder.
 * Schema covers all fields TheMealDB has to offer.
 * `enum` type for Area.
-* There are `get` methods in the `MealsAPI` class and corresponding resolvers for *almost* every endpoint TheMealDB has, including the Patreon-only endpoints. All you need to do is add your API key to a `.env` file in the root directory. 
+* There are `get` methods in the `MealsAPI` class and corresponding resolvers for *almost* every endpoint TheMealDB has, including the Patreon-only endpoints. All you need to do is add your API key to a `.env` file in the root directory.
+* Nullish coalescing on the API key so that this server defaults to the public test '1' key. 
 ----
 #### Environment Details
 * NodeJS version: 14.4.0

@@ -1,5 +1,4 @@
 import { Resolvers } from './gen/graphql-types'
-import { identity } from 'lodash'
 
 const resolvers: Resolvers = {
   Query: {
@@ -65,36 +64,36 @@ const resolvers: Resolvers = {
   },
 
   Meal: {
-    id:             me => me.id,
-    name:           me => me.name,
+    id: me => me.id,
+    name: me => me.name,
     drinkAlternate: me => me.drinkAlternate,
-    category:       me => me.category,
-    area:           me => me.area,
-    instructions:   me => me.instructions,
-    thumbnail:      me => me.thumbnail,
-    tags:           me => me.tags,
-    youtube:        me => me.youtube,
-    ingredients:    me => me.ingredients,
-    source:         me => me.source,
-    dateModified:   me => me.dateModified
+    category: me => me.category,
+    area: me => me.area,
+    instructions: me => me.instructions,
+    thumbnail: me => me.thumbnail,
+    tags: me => me.tags,
+    youtube: me => me.youtube,
+    ingredients: me => me.ingredients,
+    source: me => me.source,
+    dateModified: me => me.dateModified
   },
 
   Category: {
-    id:          me => me.id,
-    name:        me => me.name,
-    thumbnail:   me => me.thumbnail,
+    id: me => me.id,
+    name: me => me.name,
+    thumbnail: me => me.thumbnail,
     description: me => me.description
   },
 
   Ingredient: {
-    id:          me => me.id,
-    name:        me => me.name,
+    id: me => me.id,
+    name: me => me.name,
     description: me => me.description,
-    kind:        me => me.kind
+    kind: me => me.kind
   },
 
   MeasuredIngredient: {
-    name:   me => me.name,
+    name: me => me.name,
     amount: me => me.amount
   }
 }
