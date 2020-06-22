@@ -86,9 +86,9 @@ export default class MealsAPI extends RESTDataSource {
   }
 
   // Search for a meal by name
-  async getMealByName (name: string): Promise<Meal[]> {
+  async getMealByName (name: string): Promise<Meal> {
     const { meals } = await this.get(`/search.php?s=${name}`)
-    return this.normalize(meals, this.mealReducer)
+    return this.normalize(meals, this.mealReducer)[0]
   }
 
   // List all meals by first letter
@@ -98,15 +98,15 @@ export default class MealsAPI extends RESTDataSource {
   }
 
   // Search for a meal by ID
-  async getMealByID (id: number): Promise<Meal[]> {
+  async getMealByID (id: number): Promise<Meal> {
     const { meals } = await this.get(`/lookup.php?i=${id}`)
-    return this.normalize(meals, this.mealReducer)
+    return this.normalize(meals, this.mealReducer)[0]
   }
 
   // Get a single random meal
-  async getRandomMeal (): Promise<Meal[]> {
+  async getRandomMeal (): Promise<Meal> {
     const { meals } = await this.get('/random.php')
-    return this.normalize(meals, this.mealReducer)
+    return this.normalize(meals, this.mealReducer)[0]
   }
 
   // Get a selection of 10 random meals

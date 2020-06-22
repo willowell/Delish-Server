@@ -7,6 +7,15 @@ query GetAllCategories {
     }
 }
 
+query GetAllIngredients {
+    allIngredients {
+        id
+        name
+        description
+        kind
+    }
+}
+
 query GetARandomMeal {
     randomMeal {
         id
