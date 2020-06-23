@@ -10,7 +10,7 @@ type Query {
     mealsByMainIngredient(mainIngredient: String!): [Meal]
     mealsByIngredients(ingredients: [String!]): [Meal]
     mealsByCategory(category: String!): [Meal]
-    mealsByArea(area: String!): [Meal]
+    mealsByArea(area: Area!): [Meal]
 }
 
 type Meal {
