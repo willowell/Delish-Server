@@ -2,8 +2,8 @@ type Query {
     mealByName(name: String!): Meal
     mealsByFirstLetter(letter: String!): [Meal]
     mealByID(id: Int!): Meal
-    randomMeal: Meal
-    randomMealSelection: [Meal]
+    randomMeal(id: Int!): Meal
+    randomMealSelection(id: Int!): [Meal]
     allCategories: [Category]
     allIngredients: [Ingredient]
     latestMeals: [Meal]

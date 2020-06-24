@@ -43,6 +43,16 @@ export type QueryMealByIdArgs = {
 };
 
 
+export type QueryRandomMealArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type QueryRandomMealSelectionArgs = {
+  id: Scalars['Int'];
+};
+
+
 export type QueryMealsByMainIngredientArgs = {
   mainIngredient: Scalars['String'];
 };
@@ -59,7 +69,7 @@ export type QueryMealsByCategoryArgs = {
 
 
 export type QueryMealsByAreaArgs = {
-  area: Scalars['String'];
+  area: Area;
 };
 
 export type Meal = {
@@ -232,8 +242,8 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   mealByName: Resolver<Maybe<ResolversTypes['Meal']>, ParentType, ContextType, RequireFields<QueryMealByNameArgs, 'name'>>;
   mealsByFirstLetter: Resolver<Maybe<Array<Maybe<ResolversTypes['Meal']>>>, ParentType, ContextType, RequireFields<QueryMealsByFirstLetterArgs, 'letter'>>;
   mealByID: Resolver<Maybe<ResolversTypes['Meal']>, ParentType, ContextType, RequireFields<QueryMealByIdArgs, 'id'>>;
-  randomMeal: Resolver<Maybe<ResolversTypes['Meal']>, ParentType, ContextType>;
-  randomMealSelection: Resolver<Maybe<Array<Maybe<ResolversTypes['Meal']>>>, ParentType, ContextType>;
+  randomMeal: Resolver<Maybe<ResolversTypes['Meal']>, ParentType, ContextType, RequireFields<QueryRandomMealArgs, 'id'>>;
+  randomMealSelection: Resolver<Maybe<Array<Maybe<ResolversTypes['Meal']>>>, ParentType, ContextType, RequireFields<QueryRandomMealSelectionArgs, 'id'>>;
   allCategories: Resolver<Maybe<Array<Maybe<ResolversTypes['Category']>>>, ParentType, ContextType>;
   allIngredients: Resolver<Maybe<Array<Maybe<ResolversTypes['Ingredient']>>>, ParentType, ContextType>;
   latestMeals: Resolver<Maybe<Array<Maybe<ResolversTypes['Meal']>>>, ParentType, ContextType>;

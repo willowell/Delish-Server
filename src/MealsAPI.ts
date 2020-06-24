@@ -104,14 +104,14 @@ export default class MealsAPI extends RESTDataSource {
   }
 
   // Get a single random meal
-  async getRandomMeal (): Promise<Meal> {
+  async getRandomMeal (id: number): Promise<Meal> {
     const { meals } = await this.get('/random.php')
     return this.normalize(meals, this.mealReducer)[0]
   }
 
   // Get a selection of 10 random meals
   //! LOCKED TO PATREON SUPPORTERS
-  async getRandomMealSelection (): Promise<Meal[]> {
+  async getRandomMealSelection (id: number): Promise<Meal[]> {
     const { meals } = await this.get('/randomselection.php')
     return this.normalize(meals, this.mealReducer)
   }

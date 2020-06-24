@@ -18,12 +18,12 @@ const resolvers: Resolvers = {
     },
 
     randomMeal: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getRandomMeal()
+      const data = ctx.dataSources.mealsAPI.getRandomMeal(args.id)
       return data
     },
 
     randomMealSelection: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getRandomMealSelection()
+      const data = ctx.dataSources.mealsAPI.getRandomMealSelection(args.id)
       return data
     },
 
