@@ -2,31 +2,6 @@ import { Resolvers } from './gen/graphql-types'
 
 const resolvers: Resolvers = {
   Query: {
-    mealByName: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getMealByName(args.name)
-      return data
-    },
-
-    mealsByFirstLetter: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getMealsByFirstLetter(args.letter)
-      return data
-    },
-
-    mealByID: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getMealByID(args.id)
-      return data
-    },
-
-    randomMeal: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getRandomMeal(args.id)
-      return data
-    },
-
-    randomMealSelection: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getRandomMealSelection(args.id)
-      return data
-    },
-
     allCategories: async (parent, args, ctx) => {
       const data = ctx.dataSources.mealsAPI.getAllCategories()
       return data
@@ -42,13 +17,23 @@ const resolvers: Resolvers = {
       return data
     },
 
-    mealsByMainIngredient: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getMealsByMainIngredient(args.mainIngredient)
+    mealByID: async (parent, args, ctx) => {
+      const data = ctx.dataSources.mealsAPI.getMealByID(args.id)
       return data
     },
 
-    mealsByIngredients: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getMealsByIngredients(args.ingredients)
+    mealByName: async (parent, args, ctx) => {
+      const data = ctx.dataSources.mealsAPI.getMealByName(args.name)
+      return data
+    },
+
+    mealsByArbitraryString: async (parent, args, ctx) => {
+      const data = ctx.dataSources.mealsAPI.getMealsByArbitraryString(args.str)
+      return data
+    },
+
+    mealsByArea: async (parent, args, ctx) => {
+      const data = ctx.dataSources.mealsAPI.getMealsByArea(args.area)
       return data
     },
 
@@ -57,8 +42,28 @@ const resolvers: Resolvers = {
       return data
     },
 
-    mealsByArea: async (parent, args, ctx) => {
-      const data = ctx.dataSources.mealsAPI.getMealsByArea(args.area)
+    mealsByFirstLetter: async (parent, args, ctx) => {
+      const data = ctx.dataSources.mealsAPI.getMealsByFirstLetter(args.letter)
+      return data
+    },
+
+    mealsByIngredients: async (parent, args, ctx) => {
+      const data = ctx.dataSources.mealsAPI.getMealsByIngredients(args.ingredients)
+      return data
+    },
+
+    mealsByMainIngredient: async (parent, args, ctx) => {
+      const data = ctx.dataSources.mealsAPI.getMealsByMainIngredient(args.mainIngredient)
+      return data
+    },
+
+    randomMeal: async (parent, args, ctx) => {
+      const data = ctx.dataSources.mealsAPI.getRandomMeal(args.id)
+      return data
+    },
+
+    randomMealSelection: async (parent, args, ctx) => {
+      const data = ctx.dataSources.mealsAPI.getRandomMealSelection(args.id)
       return data
     }
   },

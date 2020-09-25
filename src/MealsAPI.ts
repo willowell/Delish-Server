@@ -85,37 +85,6 @@ export default class MealsAPI extends RESTDataSource {
     return _.isArray(data) ? _.map(data, (datum: any) => reducer(datum)) : []
   }
 
-  // Search for a meal by name
-  async getMealByName (name: string): Promise<Meal> {
-    const { meals } = await this.get(`/search.php?s=${name}`)
-    return this.normalize(meals, this.mealReducer)[0]
-  }
-
-  // List all meals by first letter
-  async getMealsByFirstLetter (letter: string): Promise<Meal[]> {
-    const { meals } = await this.get(`/search.php?f=${letter}`)
-    return this.normalize(meals, this.mealReducer)
-  }
-
-  // Search for a meal by ID
-  async getMealByID (id: number): Promise<Meal> {
-    const { meals } = await this.get(`/lookup.php?i=${id}`)
-    return this.normalize(meals, this.mealReducer)[0]
-  }
-
-  // Get a single random meal
-  async getRandomMeal (id: number): Promise<Meal> {
-    const { meals } = await this.get('/random.php')
-    return this.normalize(meals, this.mealReducer)[0]
-  }
-
-  // Get a selection of 10 random meals
-  //! LOCKED TO PATREON SUPPORTERS
-  async getRandomMealSelection (id: number): Promise<Meal[]> {
-    const { meals } = await this.get('/randomselection.php')
-    return this.normalize(meals, this.mealReducer)
-  }
-
   // Get a list of all meal categories
   async getAllCategories (): Promise<Category[]> {
     const { meals } = await this.get('/categories.php')
@@ -135,9 +104,39 @@ export default class MealsAPI extends RESTDataSource {
     return this.normalize(meals, this.mealReducer)
   }
 
-  // Search for some meals by main ingredient
-  async getMealsByMainIngredient (mainIngredient: string): Promise<Meal[]> {
-    const { meals } = await this.get(`/filter.php?i=${mainIngredient}`)
+  // Search for a meal by ID
+  async getMealByID (id: number): Promise<Meal> {
+    const { meals } = await this.get(`/lookup.php?i=${id}`)
+    return this.normalize(meals, this.mealReducer)[0]
+  }
+
+  // Search for a meal by name
+  async getMealByName (name: string): Promise<Meal> {
+    const { meals } = await this.get(`/search.php?s=${name}`)
+    return this.normalize(meals, this.mealReducer)[0]
+  }
+
+  // Search for some meals by an arbitrary search term ("chicken", "cheese", etc.)
+  async getMealsByArbitraryString (str: string): Promise<Meal[]> {
+    const { meals } = await this.get(`/search.php?s=${str}`)
+    return this.normalize(meals, this.mealReducer)
+  }
+
+  // Search for some meals by area (Italian, Japanese, etc.)
+  async getMealsByArea (area: Area): Promise<Meal[]> {
+    const { meals } = await this.get(`/filter.php?a=${area}`)
+    return this.normalize(meals, this.mealReducer)
+  }
+
+  // Search for some meals by category
+  async getMealsByCategory (category: string): Promise<Meal[]> {
+    const { meals } = await this.get(`/filter.php?c=${category}`)
+    return this.normalize(meals, this.mealReducer)
+  }
+
+  // List all meals by first letter
+  async getMealsByFirstLetter (letter: string): Promise<Meal[]> {
+    const { meals } = await this.get(`/search.php?f=${letter}`)
     return this.normalize(meals, this.mealReducer)
   }
 
@@ -148,15 +147,22 @@ export default class MealsAPI extends RESTDataSource {
     return this.normalize(meals, this.mealReducer)
   }
 
-  // Search for some meals by category
-  async getMealsByCategory (category: string): Promise<Meal[]> {
-    const { meals } = await this.get(`/filter.php?c=${category}`)
+  // Search for some meals by main ingredient
+  async getMealsByMainIngredient (mainIngredient: string): Promise<Meal[]> {
+    const { meals } = await this.get(`/filter.php?i=${mainIngredient}`)
     return this.normalize(meals, this.mealReducer)
   }
 
-  // Search for some meals by area (Italian, Japanese, etc.)
-  async getMealsByArea (area: Area): Promise<Meal[]> {
-    const { meals } = await this.get(`/filter.php?a=${area}`)
+  // Get a single random meal
+  async getRandomMeal (id: number): Promise<Meal> {
+    const { meals } = await this.get('/random.php')
+    return this.normalize(meals, this.mealReducer)[0]
+  }
+
+  // Get a selection of 10 random meals
+  //! LOCKED TO PATREON SUPPORTERS
+  async getRandomMealSelection (id: number): Promise<Meal[]> {
+    const { meals } = await this.get('/randomselection.php')
     return this.normalize(meals, this.mealReducer)
   }
 }

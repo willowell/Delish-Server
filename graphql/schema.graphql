@@ -1,16 +1,20 @@
 type Query {
-    mealByName(name: String!): Meal
-    mealsByFirstLetter(letter: String!): [Meal]
-    mealByID(id: Int!): Meal
+    allCategories:                                  [Category]
+    allIngredients:                                 [Ingredient]
+    latestMeals:                                    [Meal]
+
+    mealByID(id: Int!):                             Meal
+    mealByName(name: String!):                      Meal
+
+    mealsByArbitraryString(str: String!):           [Meal] 
+    mealsByArea(area: Area!):                       [Meal]
+    mealsByCategory(category: String!):             [Meal]
+    mealsByFirstLetter(letter: String!):            [Meal]
+    mealsByIngredients(ingredients: [String!]):     [Meal]
+    mealsByMainIngredient(mainIngredient: String!): [Meal]
+    
     randomMeal(id: Int!): Meal
     randomMealSelection(id: Int!): [Meal]
-    allCategories: [Category]
-    allIngredients: [Ingredient]
-    latestMeals: [Meal]
-    mealsByMainIngredient(mainIngredient: String!): [Meal]
-    mealsByIngredients(ingredients: [String!]): [Meal]
-    mealsByCategory(category: String!): [Meal]
-    mealsByArea(area: Area!): [Meal]
 }
 
 type Meal {
