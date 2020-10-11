@@ -31,4 +31,8 @@ To build and run this server on your machine:
 5. If all went well, the server will be ready at http://localhost:4000/.
 6. Enjoy!!
 
+#### Deployment Notes
+This server is set up for deployment to Netlify.
+I followed [this tutorial](https://khalilstemmler.com/articles/tutorials/deploying-a-serverless-graphql-api-on-netlify/) to hook up my local Apollo server to Netlify.
+
 If you have any problems, questions, suggestions, or critiques, please open an issue on this repository!
