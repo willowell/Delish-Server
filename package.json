@@ -26,8 +26,9 @@
     "lint": "npx eslint .",
     "plzfixmycode": "npx eslint . --fix",
     "gen": "yarn graphql-codegen",
-    "bundle": "cpx \"src/**/*.*\" lambda/bundle",
-    "build:lambda": "yarn bundle && netlify-lambda build lambda"
+    "bundle-src": "cpx src/**/*.* lambda/bundle",
+    "bundle-graphql": "cpx graphql/**/*.* lambda/graphql",
+    "build:lambda": "yarn bundle-src && yarn bundle-graphql && netlify-lambda build lambda"
   },
   "devDependencies": {
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
