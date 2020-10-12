@@ -26,9 +26,14 @@
     "lint": "npx eslint .",
     "plzfixmycode": "npx eslint . --fix",
     "gen": "yarn graphql-codegen",
-    "bundle": "cpx \"src/**/*.*\" functions/bundle"
+    "bundle": "cpx \"src/**/*.*\" lambda/bundle",
+    "build:lambda": "yarn bundle && netlify-lambda build lambda"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
     "@graphql-codegen/cli": "^1.17.10",
     "@graphql-codegen/typescript": "^1.17.10",
     "@graphql-codegen/typescript-resolvers": "^1.17.10",
@@ -43,6 +48,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "netlify-lambda": "^2.0.1",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
     "ts-node": "^9.0.0",
