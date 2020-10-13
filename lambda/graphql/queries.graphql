@@ -1,0 +1,31 @@
+query GetAllCategories {
+    allCategories {
+        id
+        name
+        description
+        thumbnail
+    }
+}
+
+query GetAllIngredients {
+    allIngredients {
+        id
+        name
+        description
+        kind
+    }
+}
+
+query GetARandomMeal {
+    randomMeal {
+        id
+        name
+        category
+        area
+        ingredients {
+            name
+            amount
+        }
+        instructions
+    }
+}
