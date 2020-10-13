@@ -21,18 +21,18 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf ./build",
-    "build": "rimraf ./build && tsc",
-    "start": "yarn build && node --require dotenv/config build/index.js",
-    "start-lambda": "netlify-lambda serve lambda",
-    "start-devdev": "NODE_ENV=development nodemon .",
+    "clean-all": "yarn clean && yarn bundle-clean",
     "lint": "npx eslint .",
     "plzfixmycode": "npx eslint . --fix",
     "gen": "yarn graphql-codegen",
     "bundle-clean": "rimraf ./lambda/delish-api/bundle && rimraf ./lambda/delish-api/graphql",
     "bundle-src": "cpx ./src/**/**/*.* lambda/delish-api/bundle",
     "bundle-graphql": "cpx ./graphql/**/*.* lambda/delish-api/graphql",
-    "build-lambda": "yarn bundle-clean; yarn bundle-src; yarn bundle-graphql; netlify-lambda build lambda",
-    "clean-all": "yarn clean && yarn bundle-clean"
+    "start": "yarn build && node --require dotenv/config build/index.js",
+    "start-lambda": "netlify-lambda serve lambda/delish-api",
+    "start-dev": "NODE_ENV=development nodemon .",
+    "build": "rimraf ./build && tsc",
+    "build-lambda": "yarn bundle-clean; yarn bundle-src; yarn bundle-graphql; netlify-lambda build lambda/delish-api"
   },
   "devDependencies": {
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",

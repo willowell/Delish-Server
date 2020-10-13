@@ -51,6 +51,14 @@ https://stackoverflow.com/questions/61740996/netlify-function-cannot-import-rela
 
 https://community.netlify.com/t/function-cannot-import-relative-graphql-type-definition-file/14444
 
+https://community.netlify.com/t/hosting-a-file-along-with-my-function/1527/30
+
 https://dev.to/atila/netlify-functions-typescript-3b3i
+
+https://github.com/stubailo/apollo-netlify-lambda-app
+
+https://github.com/mraerino/netlify-functions-readfile
+
+https://github.com/talves/netlify-functions-cra-example
 
 If you have any problems, questions, suggestions, or critiques, please open an issue on this repository!

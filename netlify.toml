@@ -1,7 +1,6 @@
 [build]
     commands = "yarn build-lambda"
-    functions = "lambda"
-    publish = "public"
+    functions = "functions"
 
 [[redirects]]
     from = "/"
