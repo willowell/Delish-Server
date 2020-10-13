@@ -4,7 +4,7 @@ export default {
     graphqlDir: '../graphql'
   },
   lambda: {
-    schemaPath: './graphql/schema.graphql',
-    graphqlDir: './graphql'
+    schemaPath: './delish-api/graphql/schema.graphql',
+    graphqlDir: './delish-api/graphql'
   }
 }
