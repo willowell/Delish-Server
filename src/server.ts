@@ -10,8 +10,8 @@ import MealsAPI from './MealsAPI'
 
 const typeDefsPath =
   (process.env.LAMBDA_TASK_ROOT)
-    ? path.resolve(process.env.LAMBDA_TASK_ROOT, config.schemaPath)
-    : path.resolve(__dirname, config.schemaPath)
+    ? path.resolve(process.env.LAMBDA_TASK_ROOT, config.lambda.schemaPath)
+    : path.resolve(__dirname, config.local.schemaPath)
 
 const typeDefs = readFileSync(typeDefsPath).toString()
 
