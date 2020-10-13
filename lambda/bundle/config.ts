@@ -1,4 +1,10 @@
 export default {
-  schemaPath: '../graphql/schema.graphql',
-  graphqlDir: '../graphql'
+  local: {
+    schemaPath: '../graphql/schema.graphql',
+    graphqlDir: '../graphql'
+  },
+  lambda: {
+    schemaPath: './graphql/schema.graphql',
+    graphqlDir: './graphql'
+  }
 }

@@ -1,4 +1,3 @@
-
 import { createLocalServer } from './server'
 
 async function main (): Promise<void> {

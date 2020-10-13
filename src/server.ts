@@ -8,6 +8,7 @@ import MealsAPI from './MealsAPI'
 
 // const typeDefs = readFileSync(path.join(__dirname, config.schemaPath)).toString()
 
+// ? https://github.com/netlify/function-deploy-test/blob/master/lambda/zipped-function/zipped-function.js#L6
 const typeDefsPath =
   (process.env.LAMBDA_TASK_ROOT)
     ? path.resolve(process.env.LAMBDA_TASK_ROOT, config.lambda.schemaPath)
