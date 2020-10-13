@@ -1,6 +1,6 @@
 [build]
     command = "yarn build:lambda"
-    functions = "functions"
+    functions = "functions/delish-api"
 
 [[redirects]]
     from = "/"

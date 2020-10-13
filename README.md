@@ -35,4 +35,22 @@ To build and run this server on your machine:
 This server is set up for deployment to Netlify.
 I followed [this tutorial](https://khalilstemmler.com/articles/tutorials/deploying-a-serverless-graphql-api-on-netlify/) to hook up my local Apollo server to Netlify.
 
+#### Helpful Links for this Particular Configuration
+
+https://www.apollographql.com/docs/apollo-server/deployment/netlify/
+
+https://github.com/atilafassina/monster-as-a-service
+
+https://egghead.io/lessons/apollo-deploying-a-graphql-api-on-netlify-serverless-functions-with-apollo-server-lambda
+
+https://www.freecodecamp.org/news/netlify-functions-firebase-and-graphql-working-together-at-last/
+
+https://github.com/JeffML/firebase-lambda2
+
+https://stackoverflow.com/questions/61740996/netlify-function-cannot-import-relative-graphql-type-definition-file
+
+https://community.netlify.com/t/function-cannot-import-relative-graphql-type-definition-file/14444
+
+https://dev.to/atila/netlify-functions-typescript-3b3i
+
 If you have any problems, questions, suggestions, or critiques, please open an issue on this repository!
