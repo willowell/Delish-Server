@@ -33,13 +33,18 @@ To build and run this server on your machine:
 
 #### Deployment Notes
 This server is set up for deployment to Netlify.
+
 I followed [this tutorial](https://khalilstemmler.com/articles/tutorials/deploying-a-serverless-graphql-api-on-netlify/) to hook up my local Apollo server to Netlify.
+
+I added some changes from [this tutorial](https://github.com/atilafassina/monster-as-a-service) since my server uses TypeScript.
+
+I need to do more research here about deploying my server to Netlify because so far my efforts have failed. I keep running into this error: `Error: ENOENT: no such file or directory, open '/graphql/schema.graphql'`.
+
+Thankfully, the local server works just fine, so I can proceed with building my website normally even though my deployment pipeline is horribly broken!
 
 #### Helpful Links for this Particular Configuration
 
 https://www.apollographql.com/docs/apollo-server/deployment/netlify/
-
-https://github.com/atilafassina/monster-as-a-service
 
 https://egghead.io/lessons/apollo-deploying-a-graphql-api-on-netlify-serverless-functions-with-apollo-server-lambda
 
