@@ -1,4 +1,5 @@
 [build]
+    commands = "yarn build-lambda"
     functions = "lambda"
     publish = "public"
 
