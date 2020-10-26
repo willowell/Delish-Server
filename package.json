@@ -15,7 +15,7 @@
   "version": "1.1.0",
   "author": "William Howell <wlm.howell@gmail.com>",
   "repository": {
-    "url": "https://github.com/willowell/Recipe-Box-Server"
+    "url": "https://github.com/willowell/Delish-Server"
   },
   "license": "MIT",
   "main": "index.js",
